@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="ru.gildor.databindingwarnings.ViewModel" />
+        <variable
+            name="list"
+            type="java.util.List&lt;Integer>" />
+
+        <variable
+            name="model"
+            type="ViewModel" />
+
+        <variable
+            name="presenter"
+            type="ru.gildor.databindingwarnings.Presenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        tools:context="ru.gildor.databindingwarnings.MainActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`List size is` + list.size()}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:custom="@{presenter::onListenerCall}"
+            android:text="@{`Text length is` + model.text.length()}" />
+
+        <Button
+            android:text="@string/do_something"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Data Binding Warnings</string>
+    <string name="do_something">Do something</string>
+</resources>
